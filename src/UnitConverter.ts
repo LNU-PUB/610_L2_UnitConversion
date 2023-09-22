@@ -3,7 +3,9 @@ import { MetricToImperial } from './MetricToImperial' // Import the MetricToImpe
 import { TemperatureConverter } from './TemperatureConverter'
 
 /**
- *
+ * UnitConverter class that is the main entry point for the library.
+ * It contains the MetricToImperial, ImperialToMetric and TemperatureConverter classes.
+ * All accessible through their respective getters.
  */
 export default class UnitConverter {
   #metricToImperial: MetricToImperial
