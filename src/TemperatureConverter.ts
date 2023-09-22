@@ -79,4 +79,66 @@ export class TemperatureConverter {
         throw new Error('Invalid temperature type')
     }
   }
+
+  // *** Private methods that performs the calculations. ***
+
+  /**
+   * Private method that handles the Celsius to Fahrenheit conversion.
+   *
+   * @param {number} temp - the temperature value to convert
+   * @returns {number} - the converted value
+   */
+  #celsiusToFahrenheit (temp: number): number {
+    return (temp * 9 / 5) + 32
+  }
+
+  /**
+   * Private method that handles the Celsius to Kelvin conversion.
+   *
+   * @param {number} temp - the temperature value to convert
+   * @returns {number} - the converted value
+   */
+  #celsiusToKelvin (temp: number): number {
+    return temp + 273.15
+  }
+
+  /**
+   * Private method that handles the Fahrenheit to Celsius conversion.
+   *
+   * @param {number} temp - the temperature value to convert
+   * @returns {number} - the converted value
+   */
+  #fahrenheitToCelsius (temp: number): number {
+    return (temp - 32) * 5 / 9
+  }
+
+  /**
+   * Private method that handles the Fahrenheit to Kelvin conversion.
+   *
+   * @param {number} temp - the temperature value to convert
+   * @returns {number} - the converted value
+   */
+  #fahrenheitToKelvin (temp: number): number {
+    return this.#celsiusToKelvin(this.#fahrenheitToCelsius(temp))
+  }
+
+  /**
+   * Private method that handles the Kelvin to Celsius conversion.
+   *
+   * @param {number} temp - the temperature value to convert
+   * @returns {number} - the converted value
+   */
+  #kelvinToCelsius (temp: number): number {
+    return temp - 273.15
+  }
+
+  /**
+   * Private method that handles the Kelvin to Fahrenheit conversion.
+   *
+   * @param {number} temp - the temperature value to convert
+   * @returns {number} - the converted value
+   */
+  #kelvinToFahrenheit (temp: number): number {
+    return this.#celsiusToFahrenheit(this.#kelvinToCelsius(temp))
+  }
 }
