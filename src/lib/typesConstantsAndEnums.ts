@@ -2,9 +2,7 @@ export enum Metric1DTypes {
   'kilometer' = 'kilometer',
   'meter' = 'meter',
   'decimeter' = 'decimeter',
-  'centimeter' = 'centimeter',
-  'millimeter' = 'millimeter',
-  'micrometer' = 'micrometer'
+  'centimeter' = 'centimeter'
 }
 
 export enum Imperial1DTypes {

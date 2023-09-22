@@ -1,4 +1,4 @@
-import { Imperial1DTypes, Metric1DTypes, feetInMeters, inchInMeters, milInMeters, mileInFeet, mileInInches, mileInMeters, mileInMils, mileInYards, yardInMeters } from './lib/typesConstantsAndEnums'
+import { Imperial1DTypes, Metric1DTypes, feetInMeters, inchInMeters, milInMeters, mileInMeters, yardInMeters } from './lib/typesConstantsAndEnums'
 
 /**
  *
@@ -18,14 +18,10 @@ export class MetricToImperial {
         return this.#kilometerToImperial(metricValue, imperialUnit)
       case Metric1DTypes.meter:
         return this.#meterToImperial(metricValue, imperialUnit)
-      // case Metric1DTypes.decimeter:
-      //   return this.#decimeterToImperial(metricValue, imperialUnit)
-      // case Metric1DTypes.centimeter:
-      //   return this.#centimeterToImperial(metricValue, imperialUnit)
-      // case Metric1DTypes.millimeter:
-      //   return this.#millimeterToImperial(metricValue, imperialUnit)
-      // case Metric1DTypes.micrometer:
-      //   return this.#micrometerToImperial(metricValue, imperialUnit)
+      case Metric1DTypes.decimeter:
+        return this.#decimeterToImperial(metricValue, imperialUnit)
+      case Metric1DTypes.centimeter:
+        return this.#centimeterToImperial(metricValue, imperialUnit)
       default:
         throw new Error('Invalid metric unit type')
     }
@@ -82,157 +78,110 @@ export class MetricToImperial {
     }
   }
 
-  // /**
-  //  * Handles decimeters to imperial conversions.
-  //  *
-  //  * @param {number} metricValue - The metric value to convert
-  //  * @param {Imperial1DTypes} imperialUnit - The imperial unit to convert to
-  //  * @throws {Error} - Invalid imperial unit type
-  //  * @returns {number} - The converted value
-  //  */
-  // #decimeterToImperial (metricValue: number, imperialUnit: Imperial1DTypes): number {
-  //   switch (imperialUnit) {
-  //     case Imperial1DTypes.mile:
-  //       return this.#decimeterToMile(metricValue)
-  //     case Imperial1DTypes.yard:
-  //       return this.#decimeterToYard(metricValue)
-  //     case Imperial1DTypes.foot:
-  //       return this.#decimeterToFoot(metricValue)
-  //     case Imperial1DTypes.inch:
-  //       return this.#decimeterToInch(metricValue)
-  //     case Imperial1DTypes.mil:
-  //       return this.#decimeterToMil(metricValue)
-  //     default:
-  //       throw new Error('Invalid imperial unit type')
-  //   }
-  // }
+  /**
+   * Handles decimeters to imperial conversions.
+   *
+   * @param {number} metricValue - The metric value to convert
+   * @param {Imperial1DTypes} imperialUnit - The imperial unit to convert to
+   * @throws {Error} - Invalid imperial unit type
+   * @returns {number} - The converted value
+   */
+  #decimeterToImperial (metricValue: number, imperialUnit: Imperial1DTypes): number {
+    switch (imperialUnit) {
+      case Imperial1DTypes.mile:
+        return this.#decimeterToMile(metricValue)
+      case Imperial1DTypes.yard:
+        return this.#decimeterToYard(metricValue)
+      case Imperial1DTypes.foot:
+        return this.#decimeterToFoot(metricValue)
+      case Imperial1DTypes.inch:
+        return this.#decimeterToInch(metricValue)
+      case Imperial1DTypes.mil:
+        return this.#decimeterToMil(metricValue)
+      default:
+        throw new Error('Invalid imperial unit type')
+    }
+  }
 
-  // /**
-  //  * Handles centimeters to imperial conversions.
-  //  *
-  //  * @param {number} metricValue - The metric value to convert
-  //  * @param {Imperial1DTypes} imperialUnit - The imperial unit to convert to
-  //  * @throws {Error} - Invalid imperial unit type
-  //  * @returns {number} - The converted value
-  //  */
-  // #centimeterToImperial (metricValue: number, imperialUnit: Imperial1DTypes): number {
-  //   switch (imperialUnit) {
-  //     case Imperial1DTypes.mile:
-  //       return this.#centimeterToMile(metricValue)
-  //     case Imperial1DTypes.yard:
-  //       return this.#centimeterToYard(metricValue)
-  //     case Imperial1DTypes.foot:
-  //       return this.#centimeterToFoot(metricValue)
-  //     case Imperial1DTypes.inch:
-  //       return this.#centimeterToInch(metricValue)
-  //     case Imperial1DTypes.mil:
-  //       return this.#centimeterToMil(metricValue)
-  //     default:
-  //       throw new Error('Invalid imperial unit type')
-  //   }
-  // }
-
-  // /**
-  //  * Handles millimeters to imperial conversions.
-  //  *
-  //  * @param {number} metricValue - The metric value to convert
-  //  * @param {Imperial1DTypes} imperialUnit - The imperial unit to convert to
-  //  * @throws {Error} - Invalid imperial unit type
-  //  * @returns {number} - The converted value
-  //  */
-  // #millimeterToImperial (metricValue: number, imperialUnit: Imperial1DTypes): number {
-  //   switch (imperialUnit) {
-  //     case Imperial1DTypes.mile:
-  //       return this.#millimeterToMile(metricValue)
-  //     case Imperial1DTypes.yard:
-  //       return this.#millimeterToYard(metricValue)
-  //     case Imperial1DTypes.foot:
-  //       return this.#millimeterToFoot(metricValue)
-  //     case Imperial1DTypes.inch:
-  //       return this.#millimeterToInch(metricValue)
-  //     case Imperial1DTypes.mil:
-  //       return this.#millimeterToMil(metricValue)
-  //     default:
-  //       throw new Error('Invalid imperial unit type')
-  //   }
-  // }
-
-  // /**
-  //  * Handles micrometers to imperial conversions.
-  //  *
-  //  * @param {number} metricValue - The metric value to convert
-  //  * @param {Imperial1DTypes} imperialUnit - The imperial unit to convert to
-  //  * @throws {Error} - Invalid imperial unit type
-  //  * @returns {number} - The converted value
-  //  */
-  // #micrometerToImperial (metricValue: number, imperialUnit: Imperial1DTypes): number {
-  //   switch (imperialUnit) {
-  //     case Imperial1DTypes.mile:
-  //       return this.#micrometerToMile(metricValue)
-  //     case Imperial1DTypes.yard:
-  //       return this.#micrometerToYard(metricValue)
-  //     case Imperial1DTypes.foot:
-  //       return this.#micrometerToFoot(metricValue)
-  //     case Imperial1DTypes.inch:
-  //       return this.#micrometerToInch(metricValue)
-  //     case Imperial1DTypes.mil:
-  //       return this.#micrometerToMil(metricValue)
-  //     default:
-  //       throw new Error('Invalid imperial unit type')
-  //   }
-  // }
+  /**
+   * Handles centimeters to imperial conversions.
+   *
+   * @param {number} metricValue - The metric value to convert
+   * @param {Imperial1DTypes} imperialUnit - The imperial unit to convert to
+   * @throws {Error} - Invalid imperial unit type
+   * @returns {number} - The converted value
+   */
+  #centimeterToImperial (metricValue: number, imperialUnit: Imperial1DTypes): number {
+    switch (imperialUnit) {
+      case Imperial1DTypes.mile:
+        return this.#centimeterToMile(metricValue)
+      case Imperial1DTypes.yard:
+        return this.#centimeterToYard(metricValue)
+      case Imperial1DTypes.foot:
+        return this.#centimeterToFoot(metricValue)
+      case Imperial1DTypes.inch:
+        return this.#centimeterToInch(metricValue)
+      case Imperial1DTypes.mil:
+        return this.#centimeterToMil(metricValue)
+      default:
+        throw new Error('Invalid imperial unit type')
+    }
+  }
 
   // *** Private methods that performs the calculations. ***
+
+  /*      *** Kilometer to imperial functions *** */
   /**
    * Converts kilometers to miles.
    *
-   * @param {number} metricValue - The metric value to convert
+   * @param {number} metricValue - The metric value in km to convert
    * @returns {number} - The converted value in miles
    */
   #kilometerToMile (metricValue: number): number {
-    return metricValue / (mileInMeters / 1000)
+    return metricValue / mileInMeters * 1000
   }
 
   /**
    * Converts kilometers to miles.
    *
-   * @param {number} metricValue - The metric value to convert
+   * @param {number} metricValue - The metric value in km to convert
    * @returns {number} - The converted value in yards
    */
   #kilometerToYard (metricValue: number): number {
-    return metricValue / (mileInMeters / 1000) * mileInYards
+    return metricValue / yardInMeters * 1000
   }
 
   /**
    * Converts kilometers to feet.
    *
-   * @param {number} metricValue - The metric value to convert
+   * @param {number} metricValue - The metric value in km to convert
    * @returns {number} - The converted value in feet
    */
   #kilometerToFoot (metricValue: number): number {
-    return metricValue / (mileInMeters / 1000) * mileInFeet
+    return metricValue / feetInMeters * 1000
   }
 
   /**
    * Converts kilometers to inches.
    *
-   * @param {number} metricValue - The metric value to convert
+   * @param {number} metricValue - The metric value in km to convert
    * @returns {number} - The converted value in inches
    */
   #kilometerToInch (metricValue: number): number {
-    return metricValue / (mileInMeters / 1000) * mileInInches
+    return metricValue / inchInMeters * 1000
   }
 
   /**
    * Converts kilometers to mils.
    *
-   * @param {number} metricValue - The metric value to convert
+   * @param {number} metricValue - The metric value in km to convert
    * @returns {number} - The converted value in mils
    */
   #kilometerToMil (metricValue: number): number {
-    return metricValue / (mileInMeters / 1000) * mileInMils
+    return metricValue / milInMeters * 1000
   }
 
+  /*      *** Meter to imperial functions *** */
   /**
    * Converts meters to miles.
    *
@@ -281,5 +230,108 @@ export class MetricToImperial {
    */
   #meterToMil (metricValue: number): number {
     return metricValue / milInMeters
+  }
+
+  /*      *** Decimeter to imperial functions *** */
+
+  /**
+   * Converts decimeters to miles.
+   *
+   * @param {number} metricValue - The metric value to convert
+   * @returns {number} - The converted value in miles
+   */
+  #decimeterToMile (metricValue: number): number {
+    return metricValue / (mileInMeters * 10)
+  }
+
+  /**
+   * Converts decimeters to yards.
+   *
+   * @param {number} metricValue - The metric value to convert
+   * @returns {number} - The converted value in yards
+   */
+  #decimeterToYard (metricValue: number): number {
+    return metricValue / (yardInMeters * 10)
+  }
+
+  /**
+   * Converts decimeters to feet.
+   *
+   * @param {number} metricValue - The metric value to convert
+   * @returns {number} - The converted value in feet
+   */
+  #decimeterToFoot (metricValue: number): number {
+    return metricValue / (feetInMeters * 10)
+  }
+
+  /**
+   * Converts decimeters to inches.
+   *
+   * @param {number} metricValue - The metric value to convert
+   * @returns {number} - The converted value in inches
+   */
+  #decimeterToInch (metricValue: number): number {
+    return metricValue / (inchInMeters * 10)
+  }
+
+  /**
+   * Converts decimeters to mils.
+   *
+   * @param {number} metricValue - The metric value to convert
+   * @returns {number} - The converted value in mils
+   */
+  #decimeterToMil (metricValue: number): number {
+    return metricValue / (milInMeters * 10)
+  }
+
+  /*      *** Centimeter to imperial functions *** */
+  /**
+   * Converts centimeters to miles.
+   *
+   * @param {number} metricValue - The metric value to convert
+   * @returns {number} - The converted value in miles
+   */
+  #centimeterToMile (metricValue: number): number {
+    return metricValue / (mileInMeters * 100)
+  }
+
+  /**
+   * Converts centimeters to yards.
+   *
+   * @param {number} metricValue - The metric value to convert
+   * @returns {number} - The converted value in yards
+   */
+  #centimeterToYard (metricValue: number): number {
+    return metricValue / (yardInMeters * 100)
+  }
+
+  /**
+   * Converts centimeters to feet.
+   *
+   * @param {number} metricValue - The metric value to convert
+   * @returns {number} - The converted value in feet
+   */
+  #centimeterToFoot (metricValue: number): number {
+    return metricValue / (feetInMeters * 100)
+  }
+
+  /**
+   * Converts centimeters to inches.
+   *
+   * @param {number} metricValue - The metric value to convert
+   * @returns {number} - The converted value in inches
+   */
+  #centimeterToInch (metricValue: number): number {
+    return metricValue / (inchInMeters * 100)
+  }
+
+  /**
+   * Converts centimeters to mils.
+   *
+   * @param {number} metricValue - The metric value to convert
+   * @returns {number} - The converted value in mils
+   */
+  #centimeterToMil (metricValue: number): number {
+    return metricValue / (milInMeters * 100)
   }
 }
