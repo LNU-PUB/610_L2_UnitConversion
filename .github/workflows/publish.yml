@@ -1,4 +1,4 @@
-name: Unit Converter
+name: '@chrisjohdev/unit_converter'
 on:
   push:
     branches:
