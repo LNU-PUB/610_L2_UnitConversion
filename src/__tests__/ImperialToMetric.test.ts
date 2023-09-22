@@ -33,4 +33,65 @@ describe('ImperialToMetric Class, convert() method', () => {
       expect(actual).toBeCloseTo(expected, 0)
     })
   })
+
+  describe('*** converting from yards', () => {
+    it('100 yards to kilometers', () => {
+      const yardValue = 100
+      const expected = 0.09144
+      const actual = converter.convert(Imperial1DTypes.yard, yardValue, Metric1DTypes.kilometer)
+      expect(actual).toBeCloseTo(expected)
+    })
+
+    it('100 yard to meters', () => {
+      const yardValue = 100
+      const expected = 91.44
+      const actual = converter.convert(Imperial1DTypes.yard, yardValue, Metric1DTypes.meter)
+      expect(actual).toBeCloseTo(expected)
+    })
+
+    it('1 yard to decimeters', () => {
+      const yardValue = 1
+      const expected = 9.144
+      const actual = converter.convert(Imperial1DTypes.yard, yardValue, Metric1DTypes.decimeter)
+      expect(actual).toBeCloseTo(expected, 1)
+    })
+
+    it('1 yard to centimeters', () => {
+      const yardValue = 1
+      const expected = 91.44
+      const actual = converter.convert(Imperial1DTypes.yard, yardValue, Metric1DTypes.centimeter)
+      expect(actual).toBeCloseTo(expected, 0)
+    })
+  })
+
+
+  describe('*** converting from foot', () => {
+    it('3500 feet to kilometers', () => {
+      const footValue = 3500
+      const expected = 1.0668
+      const actual = converter.convert(Imperial1DTypes.foot, footValue, Metric1DTypes.kilometer)
+      expect(actual).toBeCloseTo(expected)
+    })
+
+    it('100 feet to meters', () => {
+      const footValue = 100
+      const expected = 30.48
+      const actual = converter.convert(Imperial1DTypes.foot, footValue, Metric1DTypes.meter)
+      expect(actual).toBeCloseTo(expected)
+    })
+
+    it('5 foot to decimeters', () => {
+      const footValue = 5
+      const expected = 15.24
+      const actual = converter.convert(Imperial1DTypes.foot, footValue, Metric1DTypes.decimeter)
+      expect(actual).toBeCloseTo(expected, 1)
+    })
+
+    it('1 foot to centimeters', () => {
+      const footValue = 1
+      const expected = 30.48
+      const actual = converter.convert(Imperial1DTypes.foot, footValue, Metric1DTypes.centimeter)
+      expect(actual).toBeCloseTo(expected, 0)
+    })
+  })
 })
