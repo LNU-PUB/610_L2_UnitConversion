@@ -1,5 +1,5 @@
 import { MetricToImperial } from '../MetricToImperial'
-import { Metric1DTypes, Imperial1DTypes, mileInMeters, feetInMeters, yardInMeters, inchInMeters, milInMeters } from '../lib/typesConstantsAndEnums'
+import { Metric1DTypes, Imperial1DTypes } from '../lib/typesConstantsAndEnums'
 
 describe('MetricToImperial Class, convert() method', () => {
   const converter = new MetricToImperial()
