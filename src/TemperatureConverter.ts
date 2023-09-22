@@ -1,7 +1,7 @@
 import { TemperatureTypes } from './lib/typesConstantsAndEnums'
 
 /**
- *
+ * TemperatureConverter class that handles the conversion of temperature values.
  */
 export class TemperatureConverter {
   /**
