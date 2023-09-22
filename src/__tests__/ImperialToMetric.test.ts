@@ -65,62 +65,92 @@ describe('ImperialToMetric Class, convert() method', () => {
   })
 
   describe('*** converting from foot', () => {
-    it('3500 inches to kilometers', () => {
+    it('3500 feet to kilometers', () => {
       const footValue = 3500
-      const expected = 0.0889
+      const expected = 1.0668
       const actual = converter.convert(Imperial1DTypes.foot, footValue, Metric1DTypes.kilometer)
       expect(actual).toBeCloseTo(expected)
     })
 
-    it('100 inches to meters', () => {
+    it('100 feet to meters', () => {
       const footValue = 100
-      const expected = 2.54
+      const expected = 30.48
       const actual = converter.convert(Imperial1DTypes.foot, footValue, Metric1DTypes.meter)
       expect(actual).toBeCloseTo(expected)
     })
 
     it('5 foot to decimeters', () => {
       const footValue = 5
-      const expected = 1.27
+      const expected = 15.24
       const actual = converter.convert(Imperial1DTypes.foot, footValue, Metric1DTypes.decimeter)
       expect(actual).toBeCloseTo(expected, 1)
     })
 
     it('1 foot to centimeters', () => {
       const footValue = 1
-      const expected = 2.54
+      const expected = 30.48
       const actual = converter.convert(Imperial1DTypes.foot, footValue, Metric1DTypes.centimeter)
       expect(actual).toBeCloseTo(expected, 0)
     })
   })
 
-
   describe('*** converting from inch', () => {
-    it('3500 feet to kilometers', () => {
+    it('3500 inches to kilometers', () => {
       const inchValue = 3500
-      const expected = 1.0668
+      const expected = 0.0889
       const actual = converter.convert(Imperial1DTypes.inch, inchValue, Metric1DTypes.kilometer)
       expect(actual).toBeCloseTo(expected)
     })
 
-    it('100 feet to meters', () => {
+    it('100 inches to meters', () => {
       const inchValue = 100
-      const expected = 30.48
+      const expected = 2.54
       const actual = converter.convert(Imperial1DTypes.inch, inchValue, Metric1DTypes.meter)
       expect(actual).toBeCloseTo(expected)
     })
 
-    it('5 inch to decimeters', () => {
+    it('5 inches to decimeters', () => {
       const inchValue = 5
-      const expected = 15.24
+      const expected = 1.27
       const actual = converter.convert(Imperial1DTypes.inch, inchValue, Metric1DTypes.decimeter)
       expect(actual).toBeCloseTo(expected, 1)
     })
 
     it('1 inch to centimeters', () => {
       const inchValue = 1
-      const expected = 30.48
+      const expected = 2.54
       const actual = converter.convert(Imperial1DTypes.inch, inchValue, Metric1DTypes.centimeter)
+      expect(actual).toBeCloseTo(expected, 0)
+    })
+  })
+
+
+  describe('*** converting from mil', () => {
+    it('35,000 mil to kilometers', () => {
+      const milValue = 35000
+      const expected = 0.000889
+      const actual = converter.convert(Imperial1DTypes.mil, milValue, Metric1DTypes.kilometer)
+      expect(actual).toBeCloseTo(expected)
+    })
+
+    it('100 miles to meters', () => {
+      const milValue = 1000
+      const expected = 0.0254
+      const actual = converter.convert(Imperial1DTypes.mil, milValue, Metric1DTypes.meter)
+      expect(actual).toBeCloseTo(expected)
+    })
+
+    it('5 miles to decimeters', () => {
+      const milValue = 500
+      const expected = 0.127
+      const actual = converter.convert(Imperial1DTypes.mil, milValue, Metric1DTypes.decimeter)
+      expect(actual).toBeCloseTo(expected, 1)
+    })
+
+    it('1 mil to centimeters', () => {
+      const milValue = 100
+      const expected = 0.254
+      const actual = converter.convert(Imperial1DTypes.mil, milValue, Metric1DTypes.centimeter)
       expect(actual).toBeCloseTo(expected, 0)
     })
   })
