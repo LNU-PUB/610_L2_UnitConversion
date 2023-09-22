@@ -1,3 +1,4 @@
+import { ImperialToMetric } from './ImperialToMetric'
 import { MetricToImperial } from './MetricToImperial' // Import the MetricToImperial class
 
 /**
@@ -5,12 +6,14 @@ import { MetricToImperial } from './MetricToImperial' // Import the MetricToImpe
  */
 export default class UnitConverter {
   #metricToImperial: MetricToImperial
+  #imperialToMetric: ImperialToMetric
 
   /**
    * Constructor for UnitConverter class.
    */
   constructor () {
     this.#metricToImperial = new MetricToImperial()
+    this.#imperialToMetric = new ImperialToMetric()
   }
 
   /**
@@ -20,5 +23,14 @@ export default class UnitConverter {
    */
   public get MetricToImperial (): MetricToImperial {
     return this.#metricToImperial
+  }
+
+  /**
+   * Returns an ImperialToMetric object.
+   *
+   * @returns {ImperialToMetric} - ImperialToMetric object
+   */
+  public get ImperialToMetric (): ImperialToMetric {
+    return this.#imperialToMetric
   }
 }

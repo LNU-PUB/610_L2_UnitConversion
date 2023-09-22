@@ -13,6 +13,12 @@ export enum Imperial1DTypes {
   'mil' = 'mil'
 }
 
+export enum TemperatureTypes {
+  'celsius' = 'celsius',
+  'fahrenheit' = 'fahrenheit',
+  'kelvin' = 'kelvin'
+}
+
 // Conversion Constants
 export const mileInMeters = 1609.34
 export const yardInMeters = 0.9144
