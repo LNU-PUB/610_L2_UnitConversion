@@ -3,5 +3,8 @@
     "files.exclude": {
       "**/tsconfig.json": true
     }
-  }
+  },
+  "cSpell.words": [
+    "chrisjohdev"
+  ]
 }
