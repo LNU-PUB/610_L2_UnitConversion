@@ -33,13 +33,23 @@ jobs:
 
     - name: Transpile TypeScript
       run: npm run build
-
+    
+    # Added for debugging
+    - name: List directories after build
+      run: ls -al
   
   copy-files:
     needs: transpile-typescript
     runs-on: ubuntu-latest
 
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    # Added for debugging
+    - name: List directories after build
+      run: ls -al
+
     - name: Copy files to dist
       run: cp package.json README.md dist
 
