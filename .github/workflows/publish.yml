@@ -33,6 +33,12 @@ jobs:
 
     - name: Transpile TypeScript
       run: npm run build
+
+    - name: Upload dist directory
+      uses: actions/upload-artifact@v3
+      with:
+        name: dist
+        path: dist/
     
     # Added for debugging
     - name: List directories after build
@@ -43,6 +49,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Download dist directory
+      uses: actions/download-artifact@v3
+      with:
+        name: dist
+        path: dist/
+        
     - name: Checkout code
       uses: actions/checkout@v4
 
