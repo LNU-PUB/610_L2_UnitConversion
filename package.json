@@ -4,6 +4,7 @@
   "description": "Provides conversions between metric and imperial units, and temperature conversions between Celsius, Fahrenheit and Kelvin.",
   "type": "module",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "exports": "./dist/index.js",
   "scripts": {
     "test": "jest",

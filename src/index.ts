@@ -1,3 +1,4 @@
 import UnitConverter from './UnitConverter'
+import { Metric1DTypes, Imperial1DTypes, TemperatureTypes } from './lib/typesConstantsAndEnums'
 
-export { UnitConverter }
+export { UnitConverter, Metric1DTypes, Imperial1DTypes, TemperatureTypes }
