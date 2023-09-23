@@ -49,14 +49,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
     - name: Download dist directory
       uses: actions/download-artifact@v3
       with:
         name: dist
         path: dist/
-
-    # - name: Checkout code
-    #   uses: actions/checkout@v4
 
     # Added for debugging
     - name: List directories before copy
