@@ -21,15 +21,15 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Setup Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
         node-version: '>=19.7'
 
     - name: Install Dependencies
-      run: npm install
+      run: npm ci
 
     - name: Transpile TypeScript
       run: npm run build
@@ -44,7 +44,7 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     # Added for debugging
     - name: List directories after build
@@ -60,10 +60,10 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Setup Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
         node-version: '>=19.7'  # Use the Node.js version you're working with
         registry-url: 'https://registry.npmjs.org'
