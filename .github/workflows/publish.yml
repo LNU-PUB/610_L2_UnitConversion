@@ -76,7 +76,7 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '>=19.7'  # Use the Node.js version you're working with
+        node-version: '>=19.7'
         registry-url: 'https://registry.npmjs.org'
 
     - name: Download dist directory
