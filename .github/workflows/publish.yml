@@ -34,11 +34,18 @@ jobs:
     - name: Transpile TypeScript
       run: npm run build
 
+  
+  copy-files:
+    needs: transpile-typescript
+    runs-on: ubuntu-latest
+
+    steps:
     - name: Copy files to dist
       run: cp package.json README.md dist/
 
+
   publish-npm:
-    needs: transpile-typescript
+    needs: copy-files
     runs-on: ubuntu-latest
 
     steps:
