@@ -89,4 +89,4 @@ jobs:
     - name: Publish to NPM
       run: npm publish dist/  # Adjust this to your specific use case
       env:
-        NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+        NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
