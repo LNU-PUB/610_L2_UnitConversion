@@ -41,7 +41,7 @@ jobs:
 
     steps:
     - name: Copy files to dist
-      run: cp package.json README.md dist/
+      run: cp package.json README.md dist
 
 
   publish-npm:
