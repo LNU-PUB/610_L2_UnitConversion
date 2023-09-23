@@ -73,11 +73,11 @@ jobs:
     # - name: Checkout code
     #   uses: actions/checkout@v4
 
-    # - name: Setup Node.js
-    #   uses: actions/setup-node@v3
-    #   with:
-    #     node-version: '>=19.7'  # Use the Node.js version you're working with
-    #     registry-url: 'https://registry.npmjs.org'
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '>=19.7'  # Use the Node.js version you're working with
+        registry-url: 'https://registry.npmjs.org'
 
     - name: Download dist directory
       uses: actions/download-artifact@v2
