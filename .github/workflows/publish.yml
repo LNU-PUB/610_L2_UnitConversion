@@ -1,20 +1,57 @@
-name: '@chrisjohdev/unit_converter'
+name: Unit converter
+
 on:
   push:
     branches:
       - master
+    paths-ignore:
+      - '**.md'
+
+  pull_request:
+    paths-ignore:
+      - '**.md'
+
 jobs:
-  release:
-    name: '@chrisjohdev/unit_converter'
+  transpile-typescript:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write
+
     steps:
-      - uses: actions/checkout@v4
-      # Setup .npmrc file to publish to npm
-      - uses: actions/setup-node@v3
-        with:
-          node-version: "19.x"
-          registry-url: "https://registry.npmjs.org"
-      - run: npm ci
-      - run: npm publish --access=public
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '>=19.7'
+
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Transpile TypeScript
+      run: npm run build
+
+  publish-npm:
+    needs: transpile-typescript
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '>=19.7'  # Use the Node.js version you're working with
+        registry-url: 'https://registry.npmjs.org'
+
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Publish to NPM
+      run: npm publish dist/  # Adjust this to your specific use case
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
