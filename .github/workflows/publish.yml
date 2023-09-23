@@ -47,11 +47,15 @@ jobs:
       uses: actions/checkout@v4
 
     # Added for debugging
-    - name: List directories before copy, listing content of dist/
-      run: ls -al dist/
+    - name: List directories before copy
+      run: ls -al
 
     - name: Copy files to dist
       run: cp -v package.json README.md dist/
+
+    # Added for debugging
+    - name: List content of dist/
+      run: ls -al dist/
 
 
   publish-npm:
