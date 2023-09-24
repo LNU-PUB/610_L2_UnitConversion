@@ -1,0 +1,25 @@
+# Ignore TypeScript source files
+*.ts
+*.tsx
+
+# Ignore TypeScript config and declaration files
+tsconfig.json
+*.d.ts
+
+# Ignore test folder
+__tests__/
+
+# Ignore development configuration files
+.npmrc
+.eslintrc.js
+.prettierrc
+.editorconfig
+
+# Ignore all files in root except package.json and README.md
+/*
+!/dist/*
+!package.json
+!README.md
+
+# Explicitly include TypeScript definition files in dist
+!/dist/*.d.ts
