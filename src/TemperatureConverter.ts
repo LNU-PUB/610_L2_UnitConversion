@@ -12,7 +12,7 @@ export class TemperatureConverter {
    * @param {TemperatureTypes} to - the temperature type to convert to
    * @returns {number} - the converted value
    */
-  public converter (temp: number, from: TemperatureTypes, to: TemperatureTypes): number {
+  public convert (temp: number, from: TemperatureTypes, to: TemperatureTypes): number {
     switch (from) {
       case TemperatureTypes.celsius:
         return this.#celsiusTo(to, temp)
