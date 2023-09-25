@@ -7,6 +7,9 @@ Project in course 1DV610 at Linnaeus University, Kalmar, Sweden
 ## License 
 [ISC](LICENSE) license
 
+**Version:** >= ES6
+**Type:** ES module
+
 ## Usage:
 
 Start with installing the package into your project
