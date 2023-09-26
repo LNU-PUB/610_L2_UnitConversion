@@ -10,8 +10,7 @@
     "dist/",
     "README.md",
     "package.json",
-    "LICENSE",
-    "images/Class-Diagram.png"
+    "LICENSE"
   ],
   "scripts": {
     "test": "jest",

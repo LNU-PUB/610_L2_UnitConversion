@@ -1,7 +1,7 @@
 <div align="center">
-  <img width="300px" alt="Class Diagram" src="https://github.com/LNU-PUB/610_L2_UnitConversion/blob/master/images/Class-Diagram.png">
   <h1>Unit Converter</h1>
 </div>
+
 ###### Author: Chris Johannesson - cj223bc - <info@chrisjohannesson.com>
 
 ## Note:
@@ -44,6 +44,8 @@ Create an instance of the UnitConverter and from there you can chose which type 
 
 [Test app](https://github.com/LNU-PUB/610_l2_test_app)
 
-## Class Diagram
-![Class Diagram](images/Class-Diagram.png)
-![Class Diagram](d4m-unit-converter/images/Class-Diagram.png)
+
+<div align="center">
+<h2>Class Diagram</h2>
+  <img width="500px" alt="Class Diagram" src="https://github.com/LNU-PUB/610_L2_UnitConversion/blob/master/images/Class-Diagram.png">
+</div>
