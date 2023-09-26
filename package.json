@@ -8,10 +8,10 @@
   "exports": "./dist/index.js",
   "files": [
     "dist/",
-    "images/",
     "README.md",
     "package.json",
-    "LICENSE"
+    "LICENSE",
+    "images/Class-Diagram.png"
   ],
   "scripts": {
     "test": "jest",

@@ -1,4 +1,7 @@
-# Unit Converter
+<div align="center">
+  <img width="300px" alt="Class Diagram" src="https://github.com/LNU-PUB/610_L2_UnitConversion/blob/master/images/Class-Diagram.png">
+  <h1>Unit Converter</h1>
+</div>
 ###### Author: Chris Johannesson - cj223bc - <info@chrisjohannesson.com>
 
 ## Note:
