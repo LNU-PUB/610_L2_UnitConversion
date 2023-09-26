@@ -40,3 +40,6 @@ const result = converter.convert(fromValue, fromType, toType)
 Create an instance of the UnitConverter and from there you can chose which type of converter you want to use as illustrated above.
 
 [Test app](https://github.com/LNU-PUB/610_l2_test_app)
+
+## Class Diagram
+![Class Diagram](./images/Class-Diagram.png)
