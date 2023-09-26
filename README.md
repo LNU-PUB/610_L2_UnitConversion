@@ -47,5 +47,5 @@ Create an instance of the UnitConverter and from there you can chose which type 
 
 <div align="center">
 <h2>Class Diagram</h2>
-  <img width="500px" alt="Class Diagram" src="https://github.com/LNU-PUB/610_L2_UnitConversion/blob/master/images/Class-Diagram.png">
+  <img alt="Class Diagram" src="https://github.com/LNU-PUB/610_L2_UnitConversion/blob/master/images/Class-Diagram.png">
 </div>
