@@ -43,4 +43,4 @@ Create an instance of the UnitConverter and from there you can chose which type 
 
 ## Class Diagram
 ![Class Diagram](images/Class-Diagram.png)
-![Class Diagram](/d4m-unit-converter/images/Class-Diagram.png)
+![Class Diagram](d4m-unit-converter/images/Class-Diagram.png)
