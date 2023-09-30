@@ -124,7 +124,6 @@ describe('ImperialToMetric Class, convert() method', () => {
     })
   })
 
-
   describe('*** converting from mil', () => {
     it('35,000 mil to kilometers', () => {
       const milValue = 35000
