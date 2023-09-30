@@ -1,4 +1,4 @@
-import { Imperial1DTypes, Metric1DTypes, feetInMeters, inchInMeters, mileInMeters, yardInMeters } from './lib/typesConstantsAndEnums'
+import { Imperial1DUnits, Metric1DUnits, feetInMeters, inchInMeters, mileInMeters, yardInMeters } from './lib/typesConstantsAndEnums'
 
 /**
  *
@@ -7,22 +7,22 @@ export class ImperialToMetric {
   /**
    * Convert method that is the main entry point for the class.
    *
-   * @param {Imperial1DTypes} imperialUnit - the imperial unit type to convert from
+   * @param {Imperial1DUnits} imperialUnit - the imperial unit type to convert from
    * @param {number} imperialValue - the imperial value to convert
-   * @param {Metric1DTypes} metricUnit - the metric unit type to convert to
+   * @param {Metric1DUnits} metricUnit - the metric unit type to convert to
    * @returns {number} - the converted value
    */
-  public convert (imperialUnit: Imperial1DTypes, imperialValue: number, metricUnit: Metric1DTypes): number {
+  public convert (imperialUnit: Imperial1DUnits, imperialValue: number, metricUnit: Metric1DUnits): number {
     switch (imperialUnit) {
-      case Imperial1DTypes.mile:
+      case Imperial1DUnits.mile:
         return this.#mileToMetric(imperialValue, metricUnit)
-      case Imperial1DTypes.yard:
+      case Imperial1DUnits.yard:
         return this.#yardToMetric(imperialValue, metricUnit)
-      case Imperial1DTypes.foot:
+      case Imperial1DUnits.foot:
         return this.#footToMetric(imperialValue, metricUnit)
-      case Imperial1DTypes.inch:
+      case Imperial1DUnits.inch:
         return this.#inchToMetric(imperialValue, metricUnit)
-      case Imperial1DTypes.mil:
+      case Imperial1DUnits.mil:
         return this.#milToMetric(imperialValue, metricUnit)
       default:
         throw new Error('Invalid metric unit type')
@@ -35,18 +35,18 @@ export class ImperialToMetric {
    * Private method that handles the mile to metric selection.
    *
    * @param {number} imperialValue - the imperial value to convert
-   * @param {Metric1DTypes} metricUnit - the metric unit type to convert to
+   * @param {Metric1DUnits} metricUnit - the metric unit type to convert to
    * @returns {number} - the converted value
    */
-  #mileToMetric (imperialValue: number, metricUnit: Metric1DTypes): number {
+  #mileToMetric (imperialValue: number, metricUnit: Metric1DUnits): number {
     switch (metricUnit) {
-      case Metric1DTypes.kilometer:
+      case Metric1DUnits.kilometer:
         return this.#mileToMeter(imperialValue) / 1000
-      case Metric1DTypes.meter:
+      case Metric1DUnits.meter:
         return this.#mileToMeter(imperialValue)
-      case Metric1DTypes.decimeter:
+      case Metric1DUnits.decimeter:
         return this.#mileToMeter(imperialValue) * 10
-      case Metric1DTypes.centimeter:
+      case Metric1DUnits.centimeter:
         return this.#mileToMeter(imperialValue) * 100
       default:
         throw new Error('Invalid metric unit type')
@@ -57,18 +57,18 @@ export class ImperialToMetric {
    * Private method that handles the yard to metric selection.
    *
    * @param {number} imperialValue - the imperial value to convert
-   * @param {Metric1DTypes} metricUnit - the metric unit type to convert to
+   * @param {Metric1DUnits} metricUnit - the metric unit type to convert to
    * @returns {number} - the converted value
    */
-  #yardToMetric (imperialValue: number, metricUnit: Metric1DTypes): number {
+  #yardToMetric (imperialValue: number, metricUnit: Metric1DUnits): number {
     switch (metricUnit) {
-      case Metric1DTypes.kilometer:
+      case Metric1DUnits.kilometer:
         return this.#yardToMeter(imperialValue) / 1000
-      case Metric1DTypes.meter:
+      case Metric1DUnits.meter:
         return this.#yardToMeter(imperialValue)
-      case Metric1DTypes.decimeter:
+      case Metric1DUnits.decimeter:
         return this.#yardToMeter(imperialValue) * 10
-      case Metric1DTypes.centimeter:
+      case Metric1DUnits.centimeter:
         return this.#yardToMeter(imperialValue) * 100
       default:
         throw new Error('Invalid metric unit type')
@@ -79,18 +79,18 @@ export class ImperialToMetric {
    * Private method that handles the foot to metric selection.
    *
    * @param {number} imperialValue - the imperial value to convert
-   * @param {Metric1DTypes} metricUnit - the metric unit type to convert to
+   * @param {Metric1DUnits} metricUnit - the metric unit type to convert to
    * @returns {number} - the converted value
    */
-  #footToMetric (imperialValue: number, metricUnit: Metric1DTypes): number {
+  #footToMetric (imperialValue: number, metricUnit: Metric1DUnits): number {
     switch (metricUnit) {
-      case Metric1DTypes.kilometer:
+      case Metric1DUnits.kilometer:
         return this.#footToMeter(imperialValue) / 1000
-      case Metric1DTypes.meter:
+      case Metric1DUnits.meter:
         return this.#footToMeter(imperialValue)
-      case Metric1DTypes.decimeter:
+      case Metric1DUnits.decimeter:
         return this.#footToMeter(imperialValue) * 10
-      case Metric1DTypes.centimeter:
+      case Metric1DUnits.centimeter:
         return this.#footToMeter(imperialValue) * 100
       default:
         throw new Error('Invalid metric unit type')
@@ -101,18 +101,18 @@ export class ImperialToMetric {
    * Private method that handles the inch to metric selection.
    *
    * @param {number} imperialValue - the imperial value to convert
-   * @param {Metric1DTypes} metricUnit - the metric unit type to convert to
+   * @param {Metric1DUnits} metricUnit - the metric unit type to convert to
    * @returns {number} - the converted value
    */
-  #inchToMetric (imperialValue: number, metricUnit: Metric1DTypes): number {
+  #inchToMetric (imperialValue: number, metricUnit: Metric1DUnits): number {
     switch (metricUnit) {
-      case Metric1DTypes.kilometer:
+      case Metric1DUnits.kilometer:
         return this.#inchToMeter(imperialValue) / 1000
-      case Metric1DTypes.meter:
+      case Metric1DUnits.meter:
         return this.#inchToMeter(imperialValue)
-      case Metric1DTypes.decimeter:
+      case Metric1DUnits.decimeter:
         return this.#inchToMeter(imperialValue) * 10
-      case Metric1DTypes.centimeter:
+      case Metric1DUnits.centimeter:
         return this.#inchToMeter(imperialValue) * 100
       default:
         throw new Error('Invalid metric unit type')
@@ -123,18 +123,18 @@ export class ImperialToMetric {
    * Private method that handles the mil to metric selection.
    *
    * @param {number} imperialValue - the imperial value to convert
-   * @param {Metric1DTypes} metricUnit - the metric unit type to convert to
+   * @param {Metric1DUnits} metricUnit - the metric unit type to convert to
    * @returns {number} - the converted value
    */
-  #milToMetric (imperialValue: number, metricUnit: Metric1DTypes): number {
+  #milToMetric (imperialValue: number, metricUnit: Metric1DUnits): number {
     switch (metricUnit) {
-      case Metric1DTypes.kilometer:
+      case Metric1DUnits.kilometer:
         return this.#inchToMeter(imperialValue / 1000) / 1000
-      case Metric1DTypes.meter:
+      case Metric1DUnits.meter:
         return this.#inchToMeter(imperialValue / 1000)
-      case Metric1DTypes.decimeter:
+      case Metric1DUnits.decimeter:
         return this.#inchToMeter(imperialValue / 1000) * 10
-      case Metric1DTypes.centimeter:
+      case Metric1DUnits.centimeter:
         return this.#inchToMeter(imperialValue / 1000) * 100
       default:
         throw new Error('Invalid metric unit type')

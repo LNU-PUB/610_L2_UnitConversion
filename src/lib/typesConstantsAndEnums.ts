@@ -1,11 +1,13 @@
-export enum Metric1DTypes {
+// Change from types to unit
+export enum Metric1DUnits {
   'kilometer' = 'kilometer',
   'meter' = 'meter',
   'decimeter' = 'decimeter',
   'centimeter' = 'centimeter'
 }
 
-export enum Imperial1DTypes {
+// Change from types to unit
+export enum Imperial1DUnits {
   'mile' = 'mile',
   'yard' = 'yard',
   'foot' = 'foot',
@@ -13,7 +15,8 @@ export enum Imperial1DTypes {
   'mil' = 'mil'
 }
 
-export enum TemperatureTypes {
+// Change from types to unit
+export enum TemperatureUnits {
   'celsius' = 'celsius',
   'fahrenheit' = 'fahrenheit',
   'kelvin' = 'kelvin'
