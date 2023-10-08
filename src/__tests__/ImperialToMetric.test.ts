@@ -8,28 +8,28 @@ describe('ImperialToMetric Class, convert() method', () => {
     it('5 miles to kilometers', () => {
       const mileValue = 5
       const expected = 8.04672
-      const actual = converter.convert(Imperial1DUnits.mile, mileValue, Metric1DUnits.kilometer)
+      const actual = converter.convert(mileValue, Imperial1DUnits.mile, Metric1DUnits.kilometer)
       expect(actual).toBeCloseTo(expected)
     })
 
     it('1 mile to meters', () => {
       const mileValue = 1
       const expected = 1609.34
-      const actual = converter.convert(Imperial1DUnits.mile, mileValue, Metric1DUnits.meter)
+      const actual = converter.convert(mileValue, Imperial1DUnits.mile, Metric1DUnits.meter)
       expect(actual).toBeCloseTo(expected)
     })
 
     it('1/4 mile to decimeters', () => {
       const mileValue = 0.25
       const expected = 4023.36
-      const actual = converter.convert(Imperial1DUnits.mile, mileValue, Metric1DUnits.decimeter)
+      const actual = converter.convert(mileValue, Imperial1DUnits.mile, Metric1DUnits.decimeter)
       expect(actual).toBeCloseTo(expected, 1)
     })
 
     it('1/4 mile to centimeters', () => {
       const mileValue = 0.25
       const expected = 40233.6
-      const actual = converter.convert(Imperial1DUnits.mile, mileValue, Metric1DUnits.centimeter)
+      const actual = converter.convert(mileValue, Imperial1DUnits.mile, Metric1DUnits.centimeter)
       expect(actual).toBeCloseTo(expected, 0)
     })
   })
@@ -38,7 +38,7 @@ describe('ImperialToMetric Class, convert() method', () => {
     it('100 yards to kilometers', () => {
       const yardValue = 100
       const expected = 0.09144
-      const actual = converter.convert(Imperial1DUnits.yard, yardValue, Metric1DUnits.kilometer)
+      const actual = converter.convert(mileValue, Imperial1DUnits.yard, yardValue, Metric1DUnits.kilometer)
       expect(actual).toBeCloseTo(expected)
     })
 

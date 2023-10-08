@@ -15,11 +15,11 @@ export class TemperatureConverter {
   public convert (temp: number, from: TemperatureUnits, to: TemperatureUnits): number {
     switch (from) {
       case TemperatureUnits.celsius:
-        return this.#celsiusTo(to, temp)
+        return this.#celsiusTo(temp, to)
       case TemperatureUnits.fahrenheit:
-        return this.#fahrenheitTo(to, temp)
+        return this.#fahrenheitTo(temp, to)
       case TemperatureUnits.kelvin:
-        return this.#kelvinTo(to, temp)
+        return this.#kelvinTo(temp, to)
       default:
         throw new Error('Invalid temperature type')
     }
@@ -29,11 +29,11 @@ export class TemperatureConverter {
   /**
    * Private method that handles the Celsius to selection.
    *
-   * @param {TemperatureUnits} to - the temperature type to convert to
    * @param {number} temp - the temperature value to convert
-   * @returns {number} - the converted value
+   * @param {TemperatureUnits} to - the temperature type to convert to
+   * @returns {number} - the converted temperature
    */
-  #celsiusTo (to: TemperatureUnits, temp: number): number {
+  #celsiusTo (temp: number, to: TemperatureUnits): number {
     switch (to) {
       case TemperatureUnits.fahrenheit:
         return this.#celsiusToFahrenheit(temp)
@@ -47,11 +47,11 @@ export class TemperatureConverter {
   /**
    * Private method that handles the Fahrenheit to selection.
    *
-   * @param {TemperatureUnits} to - the temperature type to convert to
    * @param {number} temp - the temperature value to convert
-   * @returns {number} - the converted value
+   * @param {TemperatureUnits} to - the temperature type to convert to
+   * @returns {number} - the converted temperature
    */
-  #fahrenheitTo (to: TemperatureUnits, temp: number): number {
+  #fahrenheitTo (temp: number, to: TemperatureUnits): number {
     switch (to) {
       case TemperatureUnits.celsius:
         return this.#fahrenheitToCelsius(temp)
@@ -65,11 +65,11 @@ export class TemperatureConverter {
   /**
    * Private method that handles the Kelvin to selection.
    *
-   * @param {TemperatureUnits} to - the temperature type to convert to
    * @param {number} temp - the temperature value to convert
-   * @returns {number} - the converted value
+   * @param {TemperatureUnits} to - the temperature type to convert to
+   * @returns {number} - the converted temperature
    */
-  #kelvinTo (to: TemperatureUnits, temp: number): number {
+  #kelvinTo (temp: number, to: TemperatureUnits): number {
     switch (to) {
       case TemperatureUnits.celsius:
         return this.#kelvinToCelsius(temp)

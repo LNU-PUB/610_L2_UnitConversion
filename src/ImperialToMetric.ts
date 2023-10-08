@@ -7,23 +7,23 @@ export class ImperialToMetric {
   /**
    * Convert method that is the main entry point for the class.
    *
+   * @param {number} length - the imperial length to convert
    * @param {Imperial1DUnits} imperialUnit - the imperial unit type to convert from
-   * @param {number} imperialValue - the imperial value to convert
    * @param {Metric1DUnits} metricUnit - the metric unit type to convert to
    * @returns {number} - the converted value
    */
-  public convert (imperialUnit: Imperial1DUnits, imperialValue: number, metricUnit: Metric1DUnits): number {
+  public convert (length: number, imperialUnit: Imperial1DUnits, metricUnit: Metric1DUnits): number {
     switch (imperialUnit) {
       case Imperial1DUnits.mile:
-        return this.#mileToMetric(imperialValue, metricUnit)
+        return this.#mileToMetric(length, metricUnit)
       case Imperial1DUnits.yard:
-        return this.#yardToMetric(imperialValue, metricUnit)
+        return this.#yardToMetric(length, metricUnit)
       case Imperial1DUnits.foot:
-        return this.#footToMetric(imperialValue, metricUnit)
+        return this.#footToMetric(length, metricUnit)
       case Imperial1DUnits.inch:
-        return this.#inchToMetric(imperialValue, metricUnit)
+        return this.#inchToMetric(length, metricUnit)
       case Imperial1DUnits.mil:
-        return this.#milToMetric(imperialValue, metricUnit)
+        return this.#milToMetric(length, metricUnit)
       default:
         throw new Error('Invalid metric unit type')
     }
@@ -34,20 +34,20 @@ export class ImperialToMetric {
   /**
    * Private method that handles the mile to metric selection.
    *
-   * @param {number} imperialValue - the imperial value to convert
+   * @param {number} length - the imperial length to convert
    * @param {Metric1DUnits} metricUnit - the metric unit type to convert to
    * @returns {number} - the converted value
    */
-  #mileToMetric (imperialValue: number, metricUnit: Metric1DUnits): number {
+  #mileToMetric (length: number, metricUnit: Metric1DUnits): number {
     switch (metricUnit) {
       case Metric1DUnits.kilometer:
-        return this.#mileToMeter(imperialValue) / 1000
+        return this.#mileToMeter(length) / 1000
       case Metric1DUnits.meter:
-        return this.#mileToMeter(imperialValue)
+        return this.#mileToMeter(length)
       case Metric1DUnits.decimeter:
-        return this.#mileToMeter(imperialValue) * 10
+        return this.#mileToMeter(length) * 10
       case Metric1DUnits.centimeter:
-        return this.#mileToMeter(imperialValue) * 100
+        return this.#mileToMeter(length) * 100
       default:
         throw new Error('Invalid metric unit type')
     }
@@ -56,20 +56,20 @@ export class ImperialToMetric {
   /**
    * Private method that handles the yard to metric selection.
    *
-   * @param {number} imperialValue - the imperial value to convert
+   * @param {number} length - the imperial length to convert
    * @param {Metric1DUnits} metricUnit - the metric unit type to convert to
    * @returns {number} - the converted value
    */
-  #yardToMetric (imperialValue: number, metricUnit: Metric1DUnits): number {
+  #yardToMetric (length: number, metricUnit: Metric1DUnits): number {
     switch (metricUnit) {
       case Metric1DUnits.kilometer:
-        return this.#yardToMeter(imperialValue) / 1000
+        return this.#yardToMeter(length) / 1000
       case Metric1DUnits.meter:
-        return this.#yardToMeter(imperialValue)
+        return this.#yardToMeter(length)
       case Metric1DUnits.decimeter:
-        return this.#yardToMeter(imperialValue) * 10
+        return this.#yardToMeter(length) * 10
       case Metric1DUnits.centimeter:
-        return this.#yardToMeter(imperialValue) * 100
+        return this.#yardToMeter(length) * 100
       default:
         throw new Error('Invalid metric unit type')
     }
@@ -78,20 +78,20 @@ export class ImperialToMetric {
   /**
    * Private method that handles the foot to metric selection.
    *
-   * @param {number} imperialValue - the imperial value to convert
+   * @param {number} length - the imperial length to convert
    * @param {Metric1DUnits} metricUnit - the metric unit type to convert to
    * @returns {number} - the converted value
    */
-  #footToMetric (imperialValue: number, metricUnit: Metric1DUnits): number {
+  #footToMetric (length: number, metricUnit: Metric1DUnits): number {
     switch (metricUnit) {
       case Metric1DUnits.kilometer:
-        return this.#footToMeter(imperialValue) / 1000
+        return this.#footToMeter(length) / 1000
       case Metric1DUnits.meter:
-        return this.#footToMeter(imperialValue)
+        return this.#footToMeter(length)
       case Metric1DUnits.decimeter:
-        return this.#footToMeter(imperialValue) * 10
+        return this.#footToMeter(length) * 10
       case Metric1DUnits.centimeter:
-        return this.#footToMeter(imperialValue) * 100
+        return this.#footToMeter(length) * 100
       default:
         throw new Error('Invalid metric unit type')
     }
@@ -100,20 +100,20 @@ export class ImperialToMetric {
   /**
    * Private method that handles the inch to metric selection.
    *
-   * @param {number} imperialValue - the imperial value to convert
+   * @param {number} length - the imperial length to convert
    * @param {Metric1DUnits} metricUnit - the metric unit type to convert to
    * @returns {number} - the converted value
    */
-  #inchToMetric (imperialValue: number, metricUnit: Metric1DUnits): number {
+  #inchToMetric (length: number, metricUnit: Metric1DUnits): number {
     switch (metricUnit) {
       case Metric1DUnits.kilometer:
-        return this.#inchToMeter(imperialValue) / 1000
+        return this.#inchToMeter(length) / 1000
       case Metric1DUnits.meter:
-        return this.#inchToMeter(imperialValue)
+        return this.#inchToMeter(length)
       case Metric1DUnits.decimeter:
-        return this.#inchToMeter(imperialValue) * 10
+        return this.#inchToMeter(length) * 10
       case Metric1DUnits.centimeter:
-        return this.#inchToMeter(imperialValue) * 100
+        return this.#inchToMeter(length) * 100
       default:
         throw new Error('Invalid metric unit type')
     }
@@ -122,20 +122,20 @@ export class ImperialToMetric {
   /**
    * Private method that handles the mil to metric selection.
    *
-   * @param {number} imperialValue - the imperial value to convert
+   * @param {number} length - the imperial length to convert
    * @param {Metric1DUnits} metricUnit - the metric unit type to convert to
    * @returns {number} - the converted value
    */
-  #milToMetric (imperialValue: number, metricUnit: Metric1DUnits): number {
+  #milToMetric (length: number, metricUnit: Metric1DUnits): number {
     switch (metricUnit) {
       case Metric1DUnits.kilometer:
-        return this.#inchToMeter(imperialValue / 1000) / 1000
+        return this.#inchToMeter(length / 1000) / 1000
       case Metric1DUnits.meter:
-        return this.#inchToMeter(imperialValue / 1000)
+        return this.#inchToMeter(length / 1000)
       case Metric1DUnits.decimeter:
-        return this.#inchToMeter(imperialValue / 1000) * 10
+        return this.#inchToMeter(length / 1000) * 10
       case Metric1DUnits.centimeter:
-        return this.#inchToMeter(imperialValue / 1000) * 100
+        return this.#inchToMeter(length / 1000) * 100
       default:
         throw new Error('Invalid metric unit type')
     }
@@ -146,40 +146,40 @@ export class ImperialToMetric {
   /**
    * Converts miles to meters.
    *
-   * @param {number} imperialValue - the imperial value to convert
+   * @param {number} length - the imperial length to convert
    * @returns {number} - the converted value
    */
-  #mileToMeter (imperialValue: number): number {
-    return imperialValue * mileInMeters
+  #mileToMeter (length: number): number {
+    return length * mileInMeters
   }
 
   /**
    * Converts yards to meters.
    *
-   * @param {number} imperialValue - the imperial value to convert
+   * @param {number} length - the imperial length to convert
    * @returns {number} - the converted value
    */
-  #yardToMeter (imperialValue: number): number {
-    return imperialValue * yardInMeters
+  #yardToMeter (length: number): number {
+    return length * yardInMeters
   }
 
   /**
    * Converts feet to meters.
    *
-   * @param {number} imperialValue - the imperial value to convert
+   * @param {number} length - the imperial length to convert
    * @returns {number} - the converted value
    */
-  #footToMeter (imperialValue: number): number {
-    return imperialValue * feetInMeters
+  #footToMeter (length: number): number {
+    return length * feetInMeters
   }
 
   /**
    * Converts inches to meters.
    *
-   * @param {number} imperialValue - the imperial value to convert
+   * @param {number} length - the imperial length to convert
    * @returns {number} - the converted value
    */
-  #inchToMeter (imperialValue: number): number {
-    return imperialValue * inchInMeters
+  #inchToMeter (length: number): number {
+    return length * inchInMeters
   }
 }
