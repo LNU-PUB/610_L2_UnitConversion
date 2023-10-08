@@ -1,6 +1,6 @@
 {
   "name": "d4m-unit-converter",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "This npm package allows for easy conversion between metric and imperial units, as well as between different temperature scales, through an intuitive interface.",
   "type": "module",
   "main": "dist/index.js",
