@@ -4,6 +4,8 @@
 
 ###### Author: Chris Johannesson - cj223bc - <info@chrisjohannesson.com>
 
+#### \*\*\* Please note that version 4 is a breaking release from version 2 and 3
+
 ## Name: d4m-unit-converter
 ## Unit Converter
 This npm package allows for easy conversion between metric and imperial units, as well as between different temperature scales, through an intuitive interface.
