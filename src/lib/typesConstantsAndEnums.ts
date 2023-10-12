@@ -1,21 +1,18 @@
-// Change from types to unit
 export enum Metric1DUnits {
-  'kilometer' = 'kilometer',
-  'meter' = 'meter',
-  'decimeter' = 'decimeter',
-  'centimeter' = 'centimeter'
+  'kilometer' = 'Kilometer (km)',
+  'meter' = 'Meter (m)',
+  'decimeter' = 'Decimeter (dm)',
+  'centimeter' = 'Centimeter (cm)'
 }
 
-// Change from types to unit
 export enum Imperial1DUnits {
-  'mile' = 'mile',
-  'yard' = 'yard',
-  'foot' = 'foot',
-  'inch' = 'inch',
-  'mil' = 'mil'
+  'mile' = 'Mile',
+  'yard' = 'Yard',
+  'foot' = 'Foot',
+  'inch' = 'Inch',
+  'mil' = 'Mil'
 }
 
-// Change from types to unit
 export enum TemperatureUnits {
   'celsius' = 'celsius',
   'fahrenheit' = 'fahrenheit',

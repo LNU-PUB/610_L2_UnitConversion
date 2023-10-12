@@ -7,8 +7,8 @@ export class MetricToImperial {
   /**
    * Convert method that is the main entry point for the class.
    *
-   * @param {Metric1DUnits} metricUnit - The metric unit to convert from
    * @param {number} length - The metric length to convert
+   * @param {Metric1DUnits} metricUnit - The metric unit to convert from
    * @param {Imperial1DUnits} imperialUnit - The imperial unit to convert to
    * @returns {number} - The converted value
    */

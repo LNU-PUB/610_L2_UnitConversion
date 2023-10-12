@@ -1,7 +1,7 @@
 import { Imperial1DUnits, Metric1DUnits, feetInMeters, inchInMeters, mileInMeters, yardInMeters } from './lib/typesConstantsAndEnums'
 
 /**
- *
+ * Class that handles the conversion of imperial to metric length units.
  */
 export class ImperialToMetric {
   /**
