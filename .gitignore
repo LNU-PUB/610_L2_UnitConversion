@@ -4,3 +4,5 @@ node_modules
 *.tgz
 old_files/
 comments-L2.txt
+images/comments/
+comments-L2.docx

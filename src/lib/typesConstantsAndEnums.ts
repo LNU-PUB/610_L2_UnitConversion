@@ -14,9 +14,9 @@ export enum Imperial1DUnits {
 }
 
 export enum TemperatureUnits {
-  'celsius' = 'celsius',
-  'fahrenheit' = 'fahrenheit',
-  'kelvin' = 'kelvin'
+  'celsius' = 'Celsius',
+  'fahrenheit' = 'Fahrenheit',
+  'kelvin' = 'Kelvin'
 }
 
 // Conversion Constants
